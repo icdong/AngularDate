@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="icdong">
+<head>
+	<meta charset="UTF-8">
+	<title>基于Angular.js的日历组件——icdong-柴少</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container" ng-controller="icdongCtrl">
+		<p style="text-align:center;">
+			请选择年份：<select name="" id="" class="" ng-model="selectYear" ng-options="item for item in year" ng-change="isChangeYear()">
+				<option value="">----请选择年----</option>
+			</select>
+			请选择月份：<select name="" id="" class="" ng-model="selectMonth" ng-options="item for item in month" ng-change="isChangeMonth()">
+				<option value="">----请选择月----</option>
+			</select>
+		</p>
+		<div class="date-display flex">
+		    <div class="next-prev">
+		      	<div class="arrow prev" ng-click="changeMonth($event)" id="prev"></div>
+		    </div>
+		    <div class="selected-date">{{currYear}}年{{currMonth}}月</div>
+		    <div class="next-prev">
+		       	<div class="arrow next" ng-click="changeMonth($event)" id="next"></div>
+		    </div>
+		</div>
+	 	<div class="week-display flex">
+	      	<div ng-repeat="item in week" class="week-cell {{item.class}}">{{item.value}}</div>
+	    </div>
+	  	<div class="date-picker">
+		    <div class="flex">
+			    <div ng-repeat="item in emptyGrids" class="date-cell"></div>
+			    <div ng-repeat="item in days" class="date-cell">
+		        	<div class="{{item.class}}{{selected == item.value ? ' selected': ''}}">{{item.value}}</div>
+		      	</div>
+		    </div>
+	  	</div>
+	</div>
+	<div class="footer">
+		<p>Created by <span>Icdong-柴少</span> 2017-09-26 20:35:00</p>
+		<p>Copyright 2017 | <a href="http://www.icdong.com">www.icdong.com</a></p>
+	</div>
+</body>
+	<script src="js/angular.js"></script>
+	<script src="js/Angular.icdongDate.js"></script>
+</html>
