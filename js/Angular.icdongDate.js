@@ -9,7 +9,7 @@
  *
  * Copyright 2017 | www.icdong.com
  * MIT、GPL2、GNU.
- * Download：git@github.com:icdong/AngularDate.git
+ * Download：https://github.com/icdong/AngularDate
  *
 **/
 
